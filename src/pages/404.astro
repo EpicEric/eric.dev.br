@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404">
+  <Fragment slot="head-extra">
+    <meta property="og:description" content="This page could not be found." />
+  </Fragment>
+  <div class="mx-2 flex items-center">
+    <h1 class="mr-4 flex h-16 items-center border-r border-r-gray-100 pr-4 text-2xl font-semibold sm:mr-5 sm:pr-5">
+      404
+    </h1>
+    <p>This page could not be found.</p>
+  </div>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import logoCircle from "../assets/logo-circle.png";
+---
+
+<BaseLayout title="Eric Rodrigues Pires">
+  <Fragment slot="head-extra">
+    <meta property="og:description" content="Programming from Brazil. he/him" />
+    <meta content="/logo.webp" property="og:image" />
+    <link href="https://mastodon.xyz/@epiceric" rel="me" />
+    <link href="https://bsky.app/profile/eric.dev.br" rel="me" />
+  </Fragment>
+  <a
+    class="group relative h-[224px] w-[224px] outline-none"
+    href="https://github.com/EpicEric"
+    rel="me"
+    target="_blank"
+  >
+    <div
+      class="absolute inset-0 rounded-full bg-gray-300 transition group-hover:scale-105 group-hover:bg-gray-600 group-hover:blur-md group-focus:scale-105 group-focus:bg-gray-300 group-focus:blur-md"
+      aria-hidden="true"
+    >
+    </div>
+    <Image
+      width={224 * 1.25}
+      height={224 * 1.25}
+      loading="eager"
+      src={logoCircle}
+      alt="My logo"
+      class="absolute inset-0 rounded-full transition group-hover:scale-125 group-focus:scale-125 group-focus:ring-8 group-focus:ring-blue-500"
+    />
+  </a>
+  <h1 class="mb-3 mt-4 text-2xl font-semibold">Eric Rodrigues Pires</h1>
+  <p class="my-4 font-light text-gray-400">Website em construção / Website under construction</p>
+  <footer class="text-sm">
+    © 2022&ndash;{new Date().getFullYear()}
+  </footer>
+</BaseLayout>
