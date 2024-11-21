@@ -11,7 +11,8 @@
     "sync": "astro sync",
     "check": "astro check",
     "astro": "astro",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "deploy-lftp": "dotenv tsx scripts/deploy-lftp.ts --"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
@@ -21,8 +22,12 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
+    "@types/node": "^22.9.1",
+    "commander": "^12.1.0",
+    "dotenv-cli": "^7.4.3",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.6"
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tsx": "^4.19.2"
   }
 }
