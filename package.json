@@ -1,6 +1,6 @@
 {
   "name": "eric.dev.br",
-  "version": "4.0.1",
+  "version": "4.0.3",
   "type": "module",
   "scripts": {
     "postinstall": "astro sync",
@@ -11,8 +11,7 @@
     "sync": "astro sync",
     "check": "astro check",
     "astro": "astro",
-    "prettier": "prettier --write .",
-    "deploy-lftp": "dotenv tsx scripts/deploy-lftp.ts --"
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
