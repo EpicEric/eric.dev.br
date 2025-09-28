@@ -10,20 +10,16 @@
     "preview": "astro preview",
     "sync": "astro sync",
     "check": "astro check",
-    "astro": "astro",
-    "prettier": "prettier --write ."
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.14.5",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4"
+    "@astrojs/check": "^0.9.4",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.14.1",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "@types/node": "^22.9.1",
-    "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.6"
+    "@types/node": "^22.9.1"
   }
 }
