@@ -5,14 +5,8 @@ My personal static website, built from scratch with Astro. Currently work-in-pro
 ## Development server
 
 ```bash
+npm install
 npm run dev
-```
-
-## Other development commands
-
-```bash
-npm run sync
-npm run prettier
 ```
 
 ## Build and deploy
