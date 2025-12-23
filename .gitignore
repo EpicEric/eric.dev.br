@@ -24,3 +24,7 @@ pnpm-debug.log*
 !.vscode/extensions.json
 !.vscode/launch.json
 !.vscode/settings.json
+
+# Nix files
+.direnv/
+result/
