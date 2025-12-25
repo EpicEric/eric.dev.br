@@ -1,6 +1,6 @@
 {
   "name": "eric.dev.br",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "type": "module",
   "scripts": {
     "postinstall": "astro sync",
@@ -13,13 +13,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.14.1",
-    "tailwindcss": "^4.1.13",
-    "typescript": "^5.9.2"
+    "@astrojs/check": "^0.9.6",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.6",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@types/node": "^22.9.1"
+    "@types/node": "^22.19.3"
   }
 }

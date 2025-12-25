@@ -1,5 +1,5 @@
 {
-  description = "My personal static website.";
+  description = "My personal static website";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
@@ -21,7 +21,7 @@
         flakedPkgs = pkgs;
         devShells.default = pkgs.mkShell {
           packages = [
-            pkgs.nodejs_24
+            pkgs.bun
           ];
         };
       }
