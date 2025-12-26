@@ -7,7 +7,7 @@ import LogoDuper from "../assets/duper.svg";
 import logoSandhole from "../assets/sandhole.png";
 
 const imageWidth = 224;
-const maxSlide = 2;
+const maxSlide = 3;
 ---
 
 <BaseLayout title="Eric Rodrigues Pires">
@@ -30,7 +30,7 @@ const maxSlide = 2;
         document.getElementById('slide-' + this.slide).scrollIntoView({ behavior: 'smooth', inline: 'start' });
       }
     }`}
-    class="flex h-screen"
+    class="relative flex max-h-screen overflow-y-hidden"
   >
     <section
       class="flex min-h-screen w-full shrink-0 flex-col items-center justify-center bg-gray-800 px-6"
@@ -72,7 +72,15 @@ const maxSlide = 2;
       <button
         type="button"
         class="mt-7 bg-gray-300 px-6 font-mono text-orange-900 italic ring-0 transition outline-none hover:scale-110 hover:bg-gray-50 focus:bg-gray-50 focus:ring-4 focus:ring-orange-400"
-        @click="() => { if (lang === 'pt') { lang = 'en'; } else { lang = 'pt'; } ; localStorage['lang'] = lang; }"
+        @click={`() => {
+          if (lang === 'pt') {
+            lang = 'en';
+          } else {
+            lang = 'pt';
+          }
+          localStorage['lang'] = lang;
+        }`}
+        :aria-label="lang === 'pt' ? 'Mudar idioma' : 'Change language'"
       >
         <svg
           class="inline size-5"
@@ -227,6 +235,25 @@ const maxSlide = 2;
         >
       </div>
     </section>
+    <section
+      class="flex min-h-screen w-full shrink-0 flex-col items-center justify-center bg-pink-950 px-2"
+      id="slide-3"
+      x-intersect.full="slide = 3"
+      :aria-label="lang === 'pt' ? 'Seu projeto' : 'Your project'"
+    >
+      <a
+        href="mailto:eric@eric.dev.br"
+        rel="me"
+        class="block w-xl max-w-full rounded-xl border border-dashed border-pink-200 bg-black/10 px-2 py-16 underline decoration-dashed inset-shadow-sm inset-shadow-black/50 transition hover:bg-black/5 hover:text-orange-400 hover:inset-shadow-xs focus:bg-black/5 focus:text-orange-400 focus:inset-shadow-xs"
+      >
+        <h2 class="text-xl font-semibold" x-text="lang === 'pt' ? 'Seu projeto aqui!' : 'Your project here!'">
+          Your project here!
+        </h2>
+        <p class="mt-4">
+          <span class="mt-2" x-text="lang === 'pt' ? 'Mande um e-mail' : 'Get in touch'">Get in touch</span>
+        </p>
+      </a>
+    </section>
     <button
       type="button"
       @click="prev"
@@ -236,7 +263,7 @@ const maxSlide = 2;
       :class="slide > 0 ? 'opacity-100' : 'opacity-0'"
       :disabled="slide <= 0"
       tabindex="1"
-      aria-label="Previous"
+      :aria-label="lang === 'pt' ? 'Anterior' : 'Previous'"
     >
       <svg
         class="size-8"
@@ -261,7 +288,7 @@ const maxSlide = 2;
       :class="slide < maxSlide ? 'opacity-100' : 'opacity-0'"
       :disabled="slide >= maxSlide"
       tabindex="2"
-      aria-label="Next"
+      :aria-label="lang === 'pt' ? 'Próximo' : 'Next'"
     >
       <svg
         class="size-8"
