@@ -30,7 +30,7 @@ const maxSlide = 2;
         document.getElementById('slide-' + this.slide).scrollIntoView({ behavior: 'smooth', inline: 'start' });
       }
     }`}
-    class="flex h-screen overflow-x-scroll"
+    class="flex h-screen"
   >
     <section
       class="flex min-h-screen w-full shrink-0 flex-col items-center justify-center bg-gray-800 px-6"
@@ -160,6 +160,7 @@ const maxSlide = 2;
       x-intersect.full="slide = 2"
       aria-label="Sandhole"
     >
+      <h2 class="sr-only">Sandhole</h2>
       <div class="flex flex-col items-center justify-center">
         <div class="relative mb-4 flex">
           <svg
