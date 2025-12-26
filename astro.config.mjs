@@ -5,7 +5,7 @@ import alpinejs from "@astrojs/alpinejs";
 
 export default defineConfig({
   site: "https://eric.dev.br",
-  integrations: [alpinejs()],
+  integrations: [alpinejs({ entrypoint: "/src/alpine_entrypoint" })],
   build: {
     assets: "assets",
   },

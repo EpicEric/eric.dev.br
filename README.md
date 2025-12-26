@@ -5,14 +5,14 @@ My personal static website, built from scratch with Astro. Currently work-in-pro
 ## Development server
 
 ```bash
-npm install
-npm run dev
+bun install
+bun dev
 ```
 
 ## Build and deploy
 
 ```bash
-npm run build
+bun run build
 ```
 
 SSG files are built to `dist/`.
