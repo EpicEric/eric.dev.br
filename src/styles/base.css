@@ -7,3 +7,7 @@
     }
   }
 }
+
+@theme {
+  --font-sans: "DejaVu Sans", sans-serif;
+}
