@@ -35,7 +35,7 @@ const maxSlide = 3;
     <section
       class="flex min-h-screen w-full shrink-0 flex-col items-center justify-center bg-gray-800 px-6"
       id="slide-0"
-      x-intersect.full="slide = 0"
+      x-intersect.margin.100px.-50%.0px.-50%="slide = 0"
       aria-label="Home"
     >
       <a
@@ -61,13 +61,19 @@ const maxSlide = 3;
       </a>
       <h1 class="mt-6 mb-2 text-2xl font-semibold">Eric Rodrigues Pires</h1>
       <p
-        class="my-4 font-light text-gray-400"
-        x-text="lang == 'pt' ? 'Programando no Brasil' : 'Programming from Brazil'"
+        class="mt-4 font-light text-gray-400"
+        x-text="lang === 'pt' ? 'Programando do Brasil.' : 'Programming from Brazil.'"
       >
-        Programming from Brazil
+        Programming from Brazil.
+      </p>
+      <p
+        class="mt-1 mb-4 font-light text-gray-400"
+        x-text="lang === 'pt' ? 'Navegue para a direita para ver meus projetos.' : 'Scroll to the right to view my projects.'"
+      >
+        Scroll to the right to view my projects.
       </p>
       <footer class="text-sm">
-        © 2022&mdash;{new Date().getFullYear()}
+        © 2022&mdash;<span x-text="lang === 'pt' ? 'hoje' : 'today'">today</span>
       </footer>
       <button
         type="button"
@@ -97,13 +103,13 @@ const maxSlide = 3;
           ><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"
           ></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg
         >
-        <span x-text="lang"></span>
+        <span x-text="lang">en</span>
       </button>
     </section>
     <section
       class="flex min-h-screen w-full shrink-0 flex-col items-center justify-center bg-gray-950"
       id="slide-1"
-      x-intersect.full="slide = 1"
+      x-intersect.margin.100px.-50%.0px.-50%="slide = 1"
       aria-label="Duper"
     >
       <div class="-mb-50">
@@ -165,7 +171,7 @@ const maxSlide = 3;
     <section
       class="flex h-screen w-full shrink-0 flex-col items-center justify-center bg-linear-120 from-orange-950 from-20% via-orange-900 via-85% to-amber-700"
       id="slide-2"
-      x-intersect.full="slide = 2"
+      x-intersect.margin.100px.-50%.0px.-50%="slide = 2"
       aria-label="Sandhole"
     >
       <h2 class="sr-only">Sandhole</h2>
@@ -221,30 +227,36 @@ const maxSlide = 3;
           />
         </div>
         <p
-          x-text="lang == 'pt' ? 'Um proxy reverso escrito em Rust e baseado em SSH.' : 'An SSH-based reverse proxy built in Rust.'"
+          x-text="lang === 'pt' ? 'Um proxy reverso escrito em Rust e baseado em SSH.' : 'An SSH-based reverse proxy built in Rust.'"
         >
           An SSH-based reverse proxy built in Rust.
         </p>
-        <p x-text="lang == 'pt' ? 'Sem mais problemas de NAT!' : 'No extra software required to beat NAT!'">
+        <p
+          class="mt-1"
+          x-text="lang === 'pt' ? 'Sem mais problemas de NAT!' : 'No extra software required to beat NAT!'"
+        >
           No extra software required to beat NAT!
         </p>
         <a
-          class="mt-2 underline decoration-dashed transition-colors hover:text-pink-500 focus:text-pink-500"
+          class="mt-3 underline transition-colors hover:text-green-500 focus:text-green-500"
           href="https://sandhole.com.br"
           target="_blank">https://sandhole.com.br</a
         >
+        <footer class="mt-6 text-sm text-orange-100/70">
+          © 2024&mdash;<span x-text="lang === 'pt' ? 'hoje' : 'today'">today</span>
+        </footer>
       </div>
     </section>
     <section
       class="flex min-h-screen w-full shrink-0 flex-col items-center justify-center bg-pink-950 px-2"
       id="slide-3"
-      x-intersect.full="slide = 3"
+      x-intersect.margin.100px.-50%.0px.-50%="slide = 3"
       :aria-label="lang === 'pt' ? 'Seu projeto' : 'Your project'"
     >
       <a
         href="mailto:eric@eric.dev.br"
         rel="me"
-        class="block w-xl max-w-full rounded-xl border border-dashed border-pink-200 bg-black/10 px-2 py-16 underline decoration-dashed inset-shadow-sm inset-shadow-black/50 transition hover:bg-black/5 hover:text-orange-400 hover:inset-shadow-xs focus:bg-black/5 focus:text-orange-400 focus:inset-shadow-xs"
+        class="block w-xl max-w-full rounded-xl border border-dashed border-pink-200 bg-black/10 px-2 py-16 underline inset-shadow-sm inset-shadow-black/50 transition hover:bg-black/5 hover:text-orange-400 hover:inset-shadow-xs focus:bg-black/5 focus:text-orange-400 focus:inset-shadow-xs"
       >
         <h2 class="text-xl font-semibold" x-text="lang === 'pt' ? 'Seu projeto aqui!' : 'Your project here!'">
           Your project here!
