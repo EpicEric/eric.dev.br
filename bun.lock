@@ -8,6 +8,7 @@
         "@alpinejs/intersect": "^3.15.3",
         "@astrojs/alpinejs": "^0.4.9",
         "@astrojs/check": "^0.9.6",
+        "@fontsource/dejavu-mono": "^5.2.5",
         "@fontsource/dejavu-sans": "^5.2.5",
         "@tailwindcss/vite": "^4.1.18",
         "@types/alpinejs": "^3.13.11",
@@ -123,6 +124,8 @@
     "@esbuild/win32-ia32": ["@esbuild/win32-ia32@0.25.10", "", { "os": "win32", "cpu": "ia32" }, "sha512-QHPDbKkrGO8/cz9LKVnJU22HOi4pxZnZhhA2HYHez5Pz4JeffhDjf85E57Oyco163GnzNCVkZK0b/n4Y0UHcSw=="],
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.10", "", { "os": "win32", "cpu": "x64" }, "sha512-9KpxSVFCu0iK1owoez6aC/s/EdUQLDN3adTxGCqxMVhrPDj6bt5dbrHDXUuq+Bs2vATFBBrQS5vdQ/Ed2P+nbw=="],
+
+    "@fontsource/dejavu-mono": ["@fontsource/dejavu-mono@5.2.5", "", {}, "sha512-xofv4WG9ReUsH0GmAt35itE+1Q4bZ/mOs0Q6+Fo96HSUHZxVfApObZWexjtPYU1WqDxSN2iLIS8kMOB+qTmntQ=="],
 
     "@fontsource/dejavu-sans": ["@fontsource/dejavu-sans@5.2.5", "", {}, "sha512-Yx6351fgK4TmlfwMuA7Of9lIKYG5BDNQP1R7vTssNSAhTHZy6CgS3HT2ETDjc4bXfZ5UC1KOYJr7RYlv9M7jGA=="],
 

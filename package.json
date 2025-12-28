@@ -16,6 +16,7 @@
     "@alpinejs/intersect": "^3.15.3",
     "@astrojs/alpinejs": "^0.4.9",
     "@astrojs/check": "^0.9.6",
+    "@fontsource/dejavu-mono": "^5.2.5",
     "@fontsource/dejavu-sans": "^5.2.5",
     "@tailwindcss/vite": "^4.1.18",
     "@types/alpinejs": "^3.13.11",
