@@ -1,6 +1,6 @@
 # eric.dev.br
 
-My personal static website, built from scratch with Astro. Currently work-in-progress.
+My personal static website, built from scratch with Astro.
 
 ## Development server
 
