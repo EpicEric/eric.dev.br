@@ -27,4 +27,4 @@ pnpm-debug.log*
 
 # Nix files
 .direnv/
-result/
+result

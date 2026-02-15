@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import logoCircle from "../../assets/logo-circle.png";
+
+const { slide } = Astro.props;
+const imageWidth = 224;
+---
+
+<article
+  class="flex min-h-screen w-full shrink-0 flex-col items-center justify-center bg-gray-800 px-6"
+  id={`slide-${slide}`}
+  x-intersect.margin.100px.-50%.0px.-50%={`slide = ${slide}`}
+  aria-label="Home"
+>
+  <a
+    class="group relative outline-hidden"
+    style={{ width: `${imageWidth}px`, height: `${imageWidth}px` }}
+    href="https://github.com/EpicEric"
+    rel="me"
+    target="_blank"
+  >
+    <div
+      class="absolute inset-0 rounded-full bg-gray-300 transition group-hover:scale-105 group-hover:bg-gray-600 group-hover:not-group-focus:blur-md group-focus:scale-125 group-focus:bg-gray-300"
+      aria-hidden="true"
+    >
+    </div>
+    <Image
+      width={imageWidth * 1.25}
+      height={imageWidth * 1.25}
+      loading="eager"
+      src={logoCircle}
+      alt="Logo"
+      class="absolute inset-0 rounded-full transition group-hover:scale-125 group-focus:scale-125 group-focus:ring-8 group-focus:ring-orange-400"
+    />
+  </a>
+  <h1 class="mt-6 mb-2 text-2xl font-semibold">Eric Rodrigues Pires</h1>
+  <p class="mt-2 mb-1 font-extralight text-gray-500" x-text="lang === 'pt' ? 'ele/dele' : 'he/him'">he/him</p>
+  <p class="font-light text-gray-400" x-text="lang === 'pt' ? 'Programando do Brasil.' : 'Programming from Brazil.'">
+    Programming from Brazil.
+  </p>
+  <p
+    class="mt-1 mb-4 font-light text-gray-400"
+    x-text="lang === 'pt' ? 'Navegue para a direita para ver meus projetos.' : 'Scroll to the right to view my projects.'"
+  >
+    Scroll to the right to view my projects.
+  </p>
+  <footer class="text-sm">
+    © 2022&mdash;<span x-text="lang === 'pt' ? 'hoje' : 'today'">today</span>
+  </footer>
+  <div class="flex gap-x-2">
+    <button
+      type="button"
+      class="mt-7 bg-gray-300 px-6 font-mono text-orange-900 italic ring-0 transition outline-none hover:scale-110 hover:bg-gray-50 focus:bg-gray-50 focus:ring-4 focus:ring-orange-400"
+      @click={`() => {
+          if (lang === 'pt') {
+            lang = 'en';
+          } else {
+            lang = 'pt';
+          }
+          localStorage['lang'] = lang;
+        }`}
+      :aria-label="lang === 'pt' ? 'Mudar idioma' : 'Change language'"
+    >
+      <svg
+        class="inline size-5"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-languages-icon lucide-languages"
+        aria-hidden="true"
+        ><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path
+          d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg
+      >
+      <span x-text="lang">en</span>
+    </button>
+    <a
+      class="mt-7 bg-gray-300 px-6 font-mono text-orange-900 italic ring-0 transition outline-none hover:scale-110 hover:bg-gray-50 focus:bg-gray-50 focus:ring-4 focus:ring-orange-400"
+      :href="lang === 'pt' ? 'https://blog.eric.dev.br/pt-BR' : 'https://blog.eric.dev.br'"
+      aria-label="Blog"
+    >
+      <svg
+        class="inline size-5"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-message-square-text-icon lucide-message-square-text"
+        aria-hidden="true"
+        ><path
+          d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"
+        ></path><path d="M7 11h10"></path><path d="M7 15h6"></path><path d="M7 7h8"></path></svg
+      >
+      <span>Blog</span>
+    </a>
+  </div>
+</article>
