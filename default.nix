@@ -12,6 +12,7 @@ pkgs.buildNpmPackage {
   src = lib.fileset.toSource {
     root = ./.;
     fileset = lib.fileset.unions [
+      ./astro.config.mjs
       ./bun.lock
       ./package.json
       ./package-lock.json
