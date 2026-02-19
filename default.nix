@@ -30,6 +30,8 @@ pkgs.buildNpmPackage {
 
   makeCacheWritable = true;
 
+  ASTRO_TELEMETRY_DISABLED = "1";
+
   installPhase = ''
     mkdir -p $out
     cp -r ./dist/* $out
