@@ -9,23 +9,34 @@ const { slide } = Astro.props;
   :aria-label="lang === 'pt' ? 'Sua ideia' : 'Your idea'"
 >
   <div
-    class="mb-6 h-20 w-sm max-w-9/12 rounded-xl border border-dashed border-pink-200 bg-black/10 inset-shadow-sm inset-shadow-black/50"
+    class="reveal mb-6 h-20 w-sm max-w-9/12 rounded-xl border border-dashed border-pink-200 bg-black/10 inset-shadow-sm inset-shadow-black/50"
     aria-hidden="true"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
   >
   </div>
-  <a
-    href="mailto:eric@eric.dev.br"
-    rel="me"
-    class="block w-xl max-w-full rounded-xl border border-dashed border-pink-200 bg-black/10 px-2 py-16 underline inset-shadow-sm inset-shadow-black/50 transition hover:bg-black/5 hover:text-orange-400 hover:decoration-wavy hover:inset-shadow-xs focus:bg-black/5 focus:text-orange-400 focus:decoration-wavy focus:inset-shadow-xs"
+  <div class="reveal delay-75" x-data="{ active: false }" :class="active && 'active'" x-intersect="active = true">
+    <a
+      href="mailto:eric@eric.dev.br"
+      rel="me"
+      class="block w-xl max-w-full rounded-xl border border-dashed border-pink-200 bg-black/10 px-2 py-16 underline inset-shadow-sm inset-shadow-black/50 transition hover:bg-black/5 hover:text-orange-400 hover:decoration-wavy hover:inset-shadow-xs focus:bg-black/5 focus:text-orange-400 focus:decoration-wavy focus:inset-shadow-xs"
+    >
+      <h2 class="text-xl font-semibold" x-text="lang === 'pt' ? 'Sua ideia aqui!' : 'Your idea here!'">
+        Your idea here!
+      </h2>
+      <p class="mt-4">
+        <span class="mt-2" x-text="lang === 'pt' ? 'Mande um e-mail' : 'Get in touch'">Get in touch</span>
+      </p>
+    </a>
+  </div>
+  <p
+    class="reveal mt-6 delay-150"
+    aria-hidden="true"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
   >
-    <h2 class="text-xl font-semibold" x-text="lang === 'pt' ? 'Sua ideia aqui!' : 'Your idea here!'">
-      Your idea here!
-    </h2>
-    <p class="mt-4">
-      <span class="mt-2" x-text="lang === 'pt' ? 'Mande um e-mail' : 'Get in touch'">Get in touch</span>
-    </p>
-  </a>
-  <p class="mt-6" aria-hidden="true">
     &copy;&nbsp;<span
       class="rounded-xl border border-dashed border-pink-200 bg-black/10 px-12 inset-shadow-sm inset-shadow-black/50"
     ></span>

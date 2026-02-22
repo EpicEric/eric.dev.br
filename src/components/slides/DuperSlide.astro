@@ -12,7 +12,7 @@ const { slide } = Astro.props;
   aria-label="Duper"
 >
   <h2 class="sr-only">Duper</h2>
-  <div class="-mb-50">
+  <div class="reveal -mb-50" x-data="{ active: false }" :class="active && 'active'" x-intersect="active = true">
     <div
       class="size-56 translate-x-1 translate-y-3 animate-[duper-pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite] rounded-4xl -bg-linear-45 from-[#3061c4] from-50% to-[#dc9b18] to-50% blur-2xl"
     >
@@ -20,7 +20,12 @@ const { slide } = Astro.props;
     <div><LogoDuper class="size-64 -translate-y-56" /></div>
   </div>
   <DuperExample />
-  <div class="mt-4 flex flex-wrap justify-center gap-3">
+  <div
+    class="reveal mt-4 flex flex-wrap justify-center gap-3 delay-150"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
+  >
     <svg
       class="size-8 fill-gray-100/80 transition hover:scale-120 hover:fill-gray-100"
       role="img"

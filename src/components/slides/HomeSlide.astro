@@ -13,11 +13,14 @@ const imageWidth = 224;
   aria-label="Home"
 >
   <a
-    class="group relative outline-hidden"
+    x-data="{ active: false }"
+    class="reveal group relative outline-hidden"
+    :class="active && 'active'"
     style={{ width: `${imageWidth}px`, height: `${imageWidth}px` }}
     href="https://github.com/EpicEric"
     rel="me"
     target="_blank"
+    x-intersect="active = true"
   >
     <div
       class="absolute inset-0 rounded-full bg-gray-300 transition group-hover:scale-105 group-hover:bg-gray-600 group-hover:not-group-focus:blur-md group-focus:scale-125 group-focus:bg-gray-300"
@@ -33,21 +36,55 @@ const imageWidth = 224;
       class="absolute inset-0 rounded-full transition group-hover:scale-125 group-focus:scale-125 group-focus:ring-8 group-focus:ring-orange-400"
     />
   </a>
-  <h1 class="mt-6 mb-2 text-2xl font-semibold">Eric Rodrigues Pires</h1>
-  <p class="mt-2 mb-1 font-extralight text-gray-500" x-text="lang === 'pt' ? 'ele/dele' : 'he/him'">he/him</p>
-  <p class="font-light text-gray-400" x-text="lang === 'pt' ? 'Programando do Brasil.' : 'Programming from Brazil.'">
+  <h1
+    class="reveal mt-6 mb-2 text-2xl font-semibold delay-75"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
+  >
+    Eric Rodrigues Pires
+  </h1>
+  <p
+    class="reveal mt-2 mb-1 font-extralight text-gray-500 delay-150"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
+    x-text="lang === 'pt' ? 'ele/dele' : 'he/him'"
+  >
+    he/him
+  </p>
+  <p
+    class="reveal font-light text-gray-400 delay-225"
+    x-text="lang === 'pt' ? 'Programando do Brasil.' : 'Programming from Brazil.'"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
+  >
     Programming from Brazil.
   </p>
   <p
-    class="mt-1 mb-4 font-light text-gray-400"
+    class="reveal mt-1 mb-4 font-light text-gray-400 delay-225"
     x-text="lang === 'pt' ? 'Navegue para a direita para ver meus projetos.' : 'Scroll to the right to view my projects.'"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
   >
     Scroll to the right to view my projects.
   </p>
-  <footer class="text-sm">
+  <footer
+    class="reveal text-sm delay-350"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
+  >
     © 2022&mdash;<span x-text="lang === 'pt' ? 'hoje' : 'today'">today</span>
   </footer>
-  <div class="flex gap-x-2">
+  <div
+    class="reveal flex gap-x-2 delay-425"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
+  >
     <button
       type="button"
       class="mt-7 flex items-center gap-x-2 bg-gray-300 px-6 font-mono text-orange-900 italic ring-0 transition outline-none hover:scale-110 hover:bg-gray-50 focus:bg-gray-50 focus:ring-4 focus:ring-orange-400"

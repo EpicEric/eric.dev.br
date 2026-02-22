@@ -22,11 +22,17 @@ const slides = [HomeSlide, DuperSlide, SandholeSlide, YourIdeaHereSlide];
       maxSlide: ${slides.length - 1},
       prev() {
         this.slide > 0 && this.slide--;
-        document.getElementById('slide-' + this.slide).scrollIntoView({ behavior: 'smooth', inline: 'start' });
+        document.getElementById('slide-' + this.slide).scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          inline: 'start',
+        });
       },
       next() {
         this.slide < this.maxSlide && this.slide++;
-        document.getElementById('slide-' + this.slide).scrollIntoView({ behavior: 'smooth', inline: 'start' });
+        document.getElementById('slide-' + this.slide).scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          inline: 'start',
+        });
       }
     }`}
     class="relative flex max-h-screen overflow-y-hidden"
