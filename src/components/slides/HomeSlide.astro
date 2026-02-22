@@ -50,7 +50,7 @@ const imageWidth = 224;
   <div class="flex gap-x-2">
     <button
       type="button"
-      class="mt-7 bg-gray-300 px-6 font-mono text-orange-900 italic ring-0 transition outline-none hover:scale-110 hover:bg-gray-50 focus:bg-gray-50 focus:ring-4 focus:ring-orange-400"
+      class="mt-7 flex items-center gap-x-2 bg-gray-300 px-6 font-mono text-orange-900 italic ring-0 transition outline-none hover:scale-110 hover:bg-gray-50 focus:bg-gray-50 focus:ring-4 focus:ring-orange-400"
       @click={`() => {
           if (lang === 'pt') {
             lang = 'en';
@@ -80,7 +80,34 @@ const imageWidth = 224;
       <span x-text="lang">en</span>
     </button>
     <a
-      class="mt-7 bg-gray-300 px-6 font-mono text-orange-900 italic ring-0 transition outline-none hover:scale-110 hover:bg-gray-50 focus:bg-gray-50 focus:ring-4 focus:ring-orange-400"
+      class="mt-7 flex items-center gap-x-2 bg-gray-300 px-6 font-mono text-orange-900 italic ring-0 transition outline-none hover:scale-110 hover:bg-gray-50 focus:bg-gray-50 focus:ring-4 focus:ring-orange-400"
+      :href="lang === 'pt' ? '/CV_pt.pdf' : '/CV_en.pdf'"
+      target="_blank"
+      aria-label="CV"
+    >
+      <svg
+        class="inline size-5"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-file-user-icon lucide-file-user"
+        ><path
+          d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"
+        ></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M16 22a4 4 0 0 0-8 0"></path><circle
+          cx="12"
+          cy="15"
+          r="3"></circle></svg
+      >
+      <span>CV</span>
+    </a>
+    <a
+      class="mt-7 flex items-center gap-x-2 bg-gray-300 px-6 font-mono text-orange-900 italic ring-0 transition outline-none hover:scale-110 hover:bg-gray-50 focus:bg-gray-50 focus:ring-4 focus:ring-orange-400"
       :href="lang === 'pt' ? 'https://blog.eric.dev.br/pt-BR' : 'https://blog.eric.dev.br'"
       aria-label="Blog"
     >
