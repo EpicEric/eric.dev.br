@@ -16,11 +16,16 @@ const { slide } = Astro.props;
     x-intersect="active = true"
   >
   </div>
-  <div class="reveal delay-75" x-data="{ active: false }" :class="active && 'active'" x-intersect="active = true">
+  <div
+    class="reveal w-xl max-w-full delay-75"
+    x-data="{ active: false }"
+    :class="active && 'active'"
+    x-intersect="active = true"
+  >
     <a
       href="mailto:eric@eric.dev.br"
       rel="me"
-      class="block w-xl max-w-full rounded-xl border border-dashed border-pink-200 bg-black/10 px-2 py-16 underline inset-shadow-sm inset-shadow-black/50 transition hover:bg-black/5 hover:text-orange-400 hover:decoration-wavy hover:inset-shadow-xs focus:bg-black/5 focus:text-orange-400 focus:decoration-wavy focus:inset-shadow-xs"
+      class="block rounded-xl border border-dashed border-pink-200 bg-black/10 px-2 py-16 underline inset-shadow-sm inset-shadow-black/50 transition hover:bg-black/5 hover:text-orange-400 hover:decoration-wavy hover:inset-shadow-xs focus:bg-black/5 focus:text-orange-400 focus:decoration-wavy focus:inset-shadow-xs"
     >
       <h2 class="text-xl font-semibold" x-text="lang === 'pt' ? 'Sua ideia aqui!' : 'Your idea here!'">
         Your idea here!
