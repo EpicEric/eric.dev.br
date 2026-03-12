@@ -35,6 +35,18 @@ const slides = [HomeSlide, DuperSlide, SandholeSlide, YourIdeaHereSlide];
         });
       }
     }`}
+    @scrollend.debounce.500ms={`
+      document.getElementById('slide-' + slide).scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        inline: 'start',
+      })
+    `}
+    @resize.window.debounce.500ms={`
+      document.getElementById('slide-' + slide).scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        inline: 'start',
+      })
+    `}
     class="relative flex max-h-screen overflow-y-hidden"
   >
     {slides.map((Slide, i) => <Slide slide={i} />)}
