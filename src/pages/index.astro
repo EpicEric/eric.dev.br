@@ -47,7 +47,7 @@ const slides = [HomeSlide, DuperSlide, SandholeSlide, YourIdeaHereSlide];
         inline: 'start',
       })
     `}
-    class="relative grid max-h-screen auto-cols-[100vw] grid-flow-col overflow-y-hidden"
+    class="relative grid auto-cols-[100vw] grid-flow-col auto-rows-[100vh] overflow-y-hidden"
   >
     {slides.map((Slide, i) => <Slide slide={i} />)}
     <button

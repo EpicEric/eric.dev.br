@@ -3,7 +3,7 @@ const { slide } = Astro.props;
 ---
 
 <article
-  class="grid min-h-screen w-full shrink-0 content-center items-center justify-center bg-pink-950 px-2"
+  class="grid content-center justify-center bg-pink-950"
   id={`slide-${slide}`}
   x-intersect.margin.100px.-50%.0px.-50%={`slide = ${slide}`}
   :aria-label="lang === 'pt' ? 'Sua ideia' : 'Your idea'"
@@ -17,7 +17,7 @@ const { slide } = Astro.props;
   >
   </div>
   <div
-    class="reveal max-w-xl delay-75"
+    class="reveal mx-auto w-xl max-w-screen delay-75"
     x-data="{ active: false }"
     :class="active && 'active'"
     x-intersect="active = true"
