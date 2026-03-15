@@ -5,14 +5,11 @@ My personal static website, built from scratch with Astro.
 ## Development server
 
 ```bash
-bun install
 bun dev
 ```
 
-## Build and deploy
+## Build
 
 ```bash
-bun run build
+nix-build
 ```
-
-SSG files are built to `dist/`.

@@ -6,13 +6,13 @@ const { slide } = Astro.props;
 ---
 
 <article
-  class="flex min-h-screen w-full shrink-0 flex-col items-center justify-center bg-gray-950"
+  class="grid min-h-screen w-full shrink-0 content-center justify-center bg-gray-950"
   id={`slide-${slide}`}
   x-intersect.margin.100px.-50%.0px.-50%={`slide = ${slide}`}
   aria-label="Duper"
 >
   <h2 class="sr-only">Duper</h2>
-  <div class="reveal -mb-50" x-data="{ active: false }" :class="active && 'active'" x-intersect="active = true">
+  <div class="reveal mx-auto -mb-50" x-data="{ active: false }" :class="active && 'active'" x-intersect="active = true">
     <div
       class="size-56 translate-x-1 translate-y-3 animate-[duper-pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite] rounded-4xl -bg-linear-45 from-[#3061c4] from-50% to-[#dc9b18] to-50% blur-2xl"
     >
@@ -21,7 +21,7 @@ const { slide } = Astro.props;
   </div>
   <DuperExample />
   <div
-    class="reveal mt-4 flex flex-wrap justify-center gap-3 delay-150"
+    class="reveal mt-4 grid grid-flow-col justify-center gap-3 delay-150"
     x-data="{ active: false }"
     :class="active && 'active'"
     x-intersect="active = true"

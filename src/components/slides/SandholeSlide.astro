@@ -7,15 +7,15 @@ const imageWidth = 224;
 ---
 
 <article
-  class="flex h-screen w-full shrink-0 flex-col items-center justify-center bg-linear-120 from-orange-950 from-20% via-orange-900 via-85% to-amber-700"
+  class="grid h-screen w-full shrink-0 content-center justify-center bg-linear-120 from-orange-950 from-20% via-orange-900 via-85% to-amber-700"
   id={`slide-${slide}`}
   x-intersect.margin.100px.-50%.0px.-50%={`slide = ${slide}`}
   aria-label="Sandhole"
 >
   <h2 class="sr-only">Sandhole</h2>
-  <div class="flex flex-col items-center justify-center">
+  <div class="grid items-center justify-center">
     <div
-      class="reveal relative mb-4 flex"
+      class="reveal relative mx-auto mb-4 flex"
       x-data="{ active: false }"
       :class="active && 'active'"
       x-intersect="active = true"

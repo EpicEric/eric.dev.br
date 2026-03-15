@@ -3,13 +3,13 @@ const { slide } = Astro.props;
 ---
 
 <article
-  class="flex min-h-screen w-full shrink-0 flex-col items-center justify-center bg-pink-950 px-2"
+  class="grid min-h-screen w-full shrink-0 content-center items-center justify-center bg-pink-950 px-2"
   id={`slide-${slide}`}
   x-intersect.margin.100px.-50%.0px.-50%={`slide = ${slide}`}
   :aria-label="lang === 'pt' ? 'Sua ideia' : 'Your idea'"
 >
   <div
-    class="reveal mb-6 h-20 w-sm max-w-9/12 rounded-xl border border-dashed border-pink-200 bg-black/10 inset-shadow-[0_4px_6px_rgb(0_0_0/0.5)] inset-shadow-black/50"
+    class="reveal mx-auto mb-6 h-20 w-sm max-w-9/12 rounded-xl border border-dashed border-pink-200 bg-black/10 inset-shadow-[0_4px_6px_rgb(0_0_0/0.5)] inset-shadow-black/50"
     aria-hidden="true"
     x-data="{ active: false }"
     :class="active && 'active'"
@@ -17,7 +17,7 @@ const { slide } = Astro.props;
   >
   </div>
   <div
-    class="reveal w-xl max-w-full delay-75"
+    class="reveal max-w-xl delay-75"
     x-data="{ active: false }"
     :class="active && 'active'"
     x-intersect="active = true"
