@@ -26,7 +26,7 @@ pkgs.buildNpmPackage {
     npmRoot = ./.;
   };
 
-  npmConfigHook = pkgs.importNpmLock.npmConfigHook;
+  inherit (pkgs.importNpmLock) npmConfigHook;
 
   makeCacheWritable = true;
 
