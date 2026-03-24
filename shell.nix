@@ -6,5 +6,6 @@ pkgs.mkShell {
   packages = [
     pkgs.bun
     pkgs.just
+    pkgs.rsync
   ];
 }
