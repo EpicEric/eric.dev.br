@@ -1,9 +1,9 @@
 {
+  sources ? import ./npins,
   system ? builtins.currentSystem,
+  pkgs ? import sources.nixpkgs { inherit system; },
 }:
 let
-  sources = import ./npins;
-  pkgs = import sources.nixpkgs { inherit system; };
   inherit (pkgs) lib;
 in
 pkgs.buildNpmPackage {
@@ -33,7 +33,6 @@ pkgs.buildNpmPackage {
   ASTRO_TELEMETRY_DISABLED = "1";
 
   installPhase = ''
-    mkdir -p $out
-    cp -r ./dist/* $out
+    cp -r dist/ $out
   '';
 }
