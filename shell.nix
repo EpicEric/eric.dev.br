@@ -5,8 +5,7 @@
 }:
 pkgs.mkShell {
   packages = [
-    pkgs.bun
-    pkgs.just
+    pkgs.nodejs_24
     pkgs.rsync
   ];
 }

@@ -5,7 +5,7 @@ My personal static website, built from scratch with Astro.
 ## Development server
 
 ```bash
-bun dev
+npm run dev
 ```
 
 ## Build
