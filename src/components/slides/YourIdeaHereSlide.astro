@@ -5,23 +5,17 @@ const { slide } = Astro.props;
 <article
   class="grid content-center justify-center bg-pink-950"
   id={`slide-${slide}`}
-  x-intersect.margin.100px.-50%.0px.-50%={`slide = ${slide}`}
+  x-data="{ active: false }"
+  x-intersect.margin.100px.-50%.0px.-50%={`slide = ${slide}; active = true`}
   :aria-label="lang === 'pt' ? 'Sua ideia' : 'Your idea'"
 >
   <div
     class="reveal mx-auto mb-6 h-20 w-sm max-w-9/12 rounded-xl border border-dashed border-pink-200 bg-black/10 inset-shadow-[0_4px_6px_rgb(0_0_0/0.5)] inset-shadow-black/50"
     aria-hidden="true"
-    x-data="{ active: false }"
     :class="active && 'active'"
-    x-intersect="active = true"
   >
   </div>
-  <div
-    class="reveal mx-auto w-xl max-w-screen delay-75"
-    x-data="{ active: false }"
-    :class="active && 'active'"
-    x-intersect="active = true"
-  >
+  <div class="reveal mx-auto w-xl max-w-screen delay-75" :class="active && 'active'">
     <a
       href="mailto:eric@eric.dev.br"
       rel="me"
@@ -35,13 +29,7 @@ const { slide } = Astro.props;
       </p>
     </a>
   </div>
-  <p
-    class="reveal mt-6 delay-150"
-    aria-hidden="true"
-    x-data="{ active: false }"
-    :class="active && 'active'"
-    x-intersect="active = true"
-  >
+  <p class="reveal mt-6 delay-150" aria-hidden="true" :class="active && 'active'">
     &copy;&nbsp;<span
       class="rounded-xl border border-dashed border-pink-200 bg-black/10 px-12 inset-shadow-[0_4px_6px_rgb(0_0_0/0.5)] inset-shadow-black/50"
     ></span>
