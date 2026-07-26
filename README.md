@@ -13,3 +13,9 @@ npm run dev
 ```bash
 nix-build
 ```
+
+## Deploy
+
+```bash
+SSH_HOST=your-ssh-host nix run github:EpicEric/now -- run .
+```
