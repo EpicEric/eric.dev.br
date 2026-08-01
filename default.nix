@@ -29,7 +29,7 @@ pkgs.buildNpmPackage {
 
   makeCacheWritable = true;
 
-  ASTRO_TELEMETRY_DISABLED = "1";
+  env.ASTRO_TELEMETRY_DISABLED = "1";
 
   installPhase = ''
     cp -r dist/ $out

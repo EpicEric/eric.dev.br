@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import alpinejs from "@astrojs/alpinejs";
 
@@ -12,4 +12,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  env: {
+    schema: {
+      RENDER_CV_PAGES: envField.boolean({ context: "server", access: "public", default: false }),
+    },
+  }
 });

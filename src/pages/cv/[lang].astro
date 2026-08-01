@@ -1,0 +1,13 @@
+---
+import { RENDER_CV_PAGES } from "astro:env/server";
+import CVLayout from "../../layouts/CVLayout.astro";
+
+export function getStaticPaths() {
+  if (RENDER_CV_PAGES) {
+    return [{ params: { lang: "pt" } }, { params: { lang: "en" } }];
+  }
+  return [];
+}
+---
+
+<CVLayout lang={Astro.params.lang} />
