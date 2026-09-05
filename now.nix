@@ -4,7 +4,10 @@
   jobs = {
     cv = {
       steps = [
-        (runner.steps.upload "cv" (import ./nix/cv { }))
+        (runner.steps.upload {
+          name = "cv";
+          deriv = import ./nix/cv { };
+        })
         {
           env = {
             CV_DIR = runner.download "cv";
@@ -18,7 +21,10 @@
 
     build = {
       steps = [
-        (runner.steps.upload "website" (import ./. { }))
+        (runner.steps.upload {
+          name = "website";
+          deriv = import ./. { };
+        })
       ];
     };
 
@@ -30,10 +36,10 @@
           {
             env = {
               WEBSITE = runner.download "website";
-              SSH_HOST = runner.secret "SSH_HOST";
+              WEBSITE_HOST = runner.secret "WEBSITE_HOST";
             };
             run = ''
-              rsync --delete-after -acP $WEBSITE/ $SSH_HOST:www
+              rsync --delete-after -acP $WEBSITE/ $WEBSITE_HOST:www
             '';
             path = [
               pkgs.rsync

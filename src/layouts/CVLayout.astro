@@ -6,7 +6,7 @@ import "@fontsource-variable/open-sans";
 
 import logoArtemis from "../assets/cv/artemis.jpg";
 import logoDuper from "../assets/cv/duper.png";
-import logoEric from "../assets/logo-circle.png";
+import logoBlueRobotics from "../assets/cv/blue-robotics.png";
 import logoNicBR from "../assets/cv/nic-br.jpg";
 import photo from "../assets/cv/photo.jpg";
 import logoPoliUSP from "../assets/cv/poli-usp.png";
@@ -32,28 +32,24 @@ const t = {
       en: "Career",
       pt: "Experiência",
     },
-    artemis: {
+    blue_robotics: {
       duration: {
-        en: "Jan. 2025—present",
-        pt: "Jan. 2025—presente",
+        en: "Sep. 2026—present",
+        pt: "Set. 2026—presente",
       },
       description: {
-        en: "Automations of the juridical lawsuit analysis and CRM systems. Microservices architecture and development for communication between internal and external systems, dealing with authentication, web scraping, durable execution, database modeling, DevOps, among other responsibilities.",
-        pt: "Automações dos sistemas de análise de processos jurídicos e CRM. Arquitetura e desenvolvimento de microsserviços para comunicação entre sistemas internos e externos, lidando com autenticação, web scraping, execução durável, modelagem de bancos de dados, DevOps, dentre outras responsabilidades.",
+        en: "Development of the BlueOS full-stack platform for remote control and monitoring of marine motorized devices, focusing on the sonar visualizer Ping-Viewer 2.",
+        pt: "Desenvolvimento da plataforma full-stack BlueOS para controle remoto e monitoramento de dispositivos motorizados marinhos, focando no visualizador de sonares Ping-Viewer 2.",
       },
     },
-    autonomous: {
-      title: {
-        en: "Self-employed",
-        pt: "Autônomo",
-      },
+    artemis: {
       duration: {
-        en: "Jan. 2022—Dec. 2024",
-        pt: "Jan. 2022—Dez. 2024",
+        en: "Jan. 2025—Aug. 2026",
+        pt: "Jan. 2025—Ago. 2026",
       },
       description: {
-        en: "Dedicated period to pursuing personal projects and self-directed learning, improving my skills in software development.",
-        pt: "Período dedicado à realização de projetos pessoais e aprendizado, aprimorando minhas habilidades em desenvolvimento de software.",
+        en: "Automations of the juridical lawsuit analysis system, CRM, and chatbot. Architecture and development of microservices, dealing with authentication, web scraping, durable execution, database modeling, DevOps, among other responsibilities.",
+        pt: "Automações do sistema de análise de processos jurídicos, CRM e chatbot. Arquitetura e desenvolvimento de microsserviços, lidando com autenticação, web scraping, execução durável, modelagem de bancos de dados, DevOps, dentre outras responsabilidades.",
       },
     },
     nic_br: {
@@ -353,14 +349,14 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
                   width={48}
                   height={48}
                   loading="eager"
-                  src={logoArtemis.src}
-                  alt="Artemis Technologies"
+                  src={logoBlueRobotics.src}
+                  alt="BlueRobotics"
                   class="float-left mr-2 rounded-md bg-white shadow-sm ring shadow-violet-300 ring-violet-300"
                 />
                 <div class="text-left">
-                  <div>Artemis Technologies</div>
-                  <div class="text-neutral-400">{t.career.artemis.duration[lang]}</div>
-                  <div class="mt-1 text-sm" set:html={t.career.artemis.description[lang]} />
+                  <div>BlueRobotics</div>
+                  <div class="text-neutral-400">{t.career.blue_robotics.duration[lang]}</div>
+                  <div class="mt-1 text-sm" set:html={t.career.blue_robotics.description[lang]} />
                 </div>
               </li>
               <li>
@@ -368,14 +364,14 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
                   width={48}
                   height={48}
                   loading="eager"
-                  src={logoEric.src}
-                  alt="Autonomous"
+                  src={logoArtemis.src}
+                  alt="Artemis Technologies"
                   class="float-right ml-2 rounded-md bg-white shadow-sm ring shadow-violet-300 ring-violet-300"
                 />
                 <div class="text-right">
-                  <div>{t.career.autonomous.title[lang]}</div>
-                  <div class="text-neutral-400">{t.career.autonomous.duration[lang]}</div>
-                  <div class="mt-1 text-sm" set:html={t.career.autonomous.description[lang]} />
+                  <div>Artemis Technologies</div>
+                  <div class="text-neutral-400">{t.career.artemis.duration[lang]}</div>
+                  <div class="mt-1 text-sm" set:html={t.career.artemis.description[lang]} />
                 </div>
               </li>
               <li>
