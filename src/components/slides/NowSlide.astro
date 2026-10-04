@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import logoNow from "../../assets/now.png";
+
+const { slide } = Astro.props;
+---
+
+<article
+  class="grid content-center justify-center"
+  id={`slide-${slide}`}
+  x-data="{ active: false }"
+  x-intersect.margin.100px.-50%.0px.-50%={`slide = ${slide}; active = true`}
+  aria-label="now"
+  style="--dot-space: 18px; --dot-size: 2px; background: linear-gradient(90deg, var(--color-gray-400) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), linear-gradient(var(--color-gray-400) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), var(--color-gray-500);"
+>
+  <h2 class="sr-only">now</h2>
+  <div
+    class="grid h-screen max-w-[90%] items-center justify-center border-r border-l border-r-stone-950 border-l-stone-700 bg-linear-105 from-stone-800 to-stone-900 px-10 shadow-2xl"
+  >
+    <div class="reveal relative mx-auto mb-4 flex" :class="active && 'active'">
+      <Image width={800} loading="eager" src={logoNow} alt="now logo" class="max-w-full" />
+    </div>
+    <p
+      class="reveal delay-75"
+      x-text="lang === 'pt' ? 'Declare comandos em Nix e rode-os em múltiplas máquinas.' : 'Declare your commands in Nix and run them across multiple machines.'"
+      :class="active && 'active'"
+    >
+      Declare your commands in Nix and run them across multiple machines.
+    </p>
+    <div class="reveal mt-3 delay-225" :class="active && 'active'">
+      <a
+        class="underline transition-colors hover:text-green-500 hover:decoration-wavy focus:text-green-500 focus:decoration-wavy"
+        href="https://now.dev.br"
+        target="_blank">https://now.dev.br</a
+      >
+    </div>
+    <footer class="reveal mt-6 text-sm delay-350" :class="active && 'active'">
+      © 2026&mdash;<span x-text="lang === 'pt' ? 'hoje' : 'today'">today</span>
+    </footer>
+  </div>
+</article>

@@ -3,16 +3,16 @@
     "type": "github",
     "owner": "NixOS",
     "repo": "nixpkgs",
-    "rev": "f8e81fc7eb063db454f563cdd596fb96a5ad1497",
-    "narHash": "sha256-sjfvXMbG5pCFgpvw2OZAFcZiTvrppCWvnB6cuGrSY08=",
-    "lastModified": 1785542685
+    "rev": "55ba7f49ef2962b42cbd126522b7df5f95037679",
+    "narHash": "sha256-sm6DclXJudZfP/pcDBQQsRqyMxBcQsuw+7yQr4rBBLE=",
+    "lastModified": 1790981744
   },
   "now": {
     "type": "github",
     "owner": "EpicEric",
     "repo": "now",
-    "rev": "51a8b7d9d2d70df4370879d2c0c4c78fefdd4fe1",
-    "narHash": "sha256-xhoau2dRj+aMXEyL91Z/oYUlp37xeucFrSrZ/SU8/AU=",
-    "lastModified": 1785588576
+    "rev": "df24d58f511dab0888075f1d306107e4abb2b0e3",
+    "narHash": "sha256-d3bDKvyIN3s3LnHRtKALuU8FZm4fCRMep6MP8HB23oU=",
+    "lastModified": 1791073397
   }
 }
