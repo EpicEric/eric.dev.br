@@ -1,7 +1,5 @@
 {
-  buildNpmPackage,
   chromium,
-  importNpmLock,
   lib,
   makeFontsConf,
   netcat,
@@ -12,37 +10,12 @@
   writableTmpDirAsHomeHook,
 }:
 let
-  cv-pdf-dist = buildNpmPackage {
+  cv-pdf-dist = (import ../.. { }).overrideAttrs {
     name = "cv-pdf-dist";
-
-    src = lib.fileset.toSource {
-      root = ../..;
-      fileset = lib.fileset.unions [
-        ../../astro.config.mjs
-        ../../package.json
-        ../../package-lock.json
-        ../../tsconfig.json
-        ../../src
-      ];
-    };
-
-    npmDeps = importNpmLock {
-      npmRoot = ../..;
-    };
-
-    npmConfigHook = importNpmLock.npmConfigHook;
-
-    makeCacheWritable = true;
-
     env = {
       ASTRO_TELEMETRY_DISABLED = "1";
       RENDER_CV_PAGES = "true";
     };
-
-    installPhase = ''
-      mkdir -p $out
-      cp -r ./dist/* $out
-    '';
   };
 in
 runCommand "cv-pdf"

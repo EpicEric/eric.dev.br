@@ -5,13 +5,14 @@ import "../styles/base.css";
 import "@fontsource-variable/open-sans";
 
 import logoArtemis from "../assets/cv/artemis.jpg";
-import logoDuper from "../assets/cv/duper.png";
 import logoBlueRobotics from "../assets/cv/blue-robotics.png";
+import logoDuper from "../assets/cv/duper.png";
 import logoNicBR from "../assets/cv/nic-br.jpg";
-import photo from "../assets/cv/photo.jpg";
+import logoNow from "../assets/cv/now.png";
 import logoPoliUSP from "../assets/cv/poli-usp.png";
 import logoSandhole from "../assets/cv/sandhole.png";
 import logoSantaCruz from "../assets/cv/santa-cruz.jpg";
+import photo from "../assets/cv/photo.jpg";
 
 const interval = Interval.fromDateTimes(DateTime.fromISO("1995-11-03"), DateTime.now());
 const age = Math.floor(interval.length("years"));
@@ -38,8 +39,8 @@ const t = {
         pt: "Set. 2026—presente",
       },
       description: {
-        en: "Development of the BlueOS full-stack platform for remote control and monitoring of marine motorized devices, focusing on the sonar visualizer Ping-Viewer 2.",
-        pt: "Desenvolvimento da plataforma full-stack BlueOS para controle remoto e monitoramento de dispositivos motorizados marinhos, focando no visualizador de sonares Ping-Viewer 2.",
+        en: "Development of the BlueOS full-stack platform for remote control and monitoring of marine motorized devices, focusing on the sonar visualizer Ping Viewer Next in Rust.",
+        pt: "Desenvolvimento da plataforma full-stack BlueOS para controle remoto e monitoramento de dispositivos motorizados marinhos, focando no visualizador de sonares Ping Viewer Next em Rust.",
       },
     },
     artemis: {
@@ -97,6 +98,12 @@ const t = {
     title: {
       en: "Personal projects",
       pt: "Projetos pessoais",
+    },
+    now: {
+      description: {
+        en: "A command runner built in Rust, based on Nix. It allows for local and/or distributed builds of reproducible scripts, with control over how and where they should run.",
+        pt: "Um executor de comandos escrito em Rust e baseado em Nix, para construção local e/ou distribuída de scripts reproduzíveis, com controle sobre como e onde devem rodar.",
+      },
     },
     duper: {
       description: {
@@ -356,7 +363,7 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
                 <div class="text-left">
                   <div>BlueRobotics</div>
                   <div class="text-neutral-400">{t.career.blue_robotics.duration[lang]}</div>
-                  <div class="mt-1 text-sm" set:html={t.career.blue_robotics.description[lang]} />
+                  <div class="mt-1 text-xs" set:html={t.career.blue_robotics.description[lang]} />
                 </div>
               </li>
               <li>
@@ -371,7 +378,7 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
                 <div class="text-right">
                   <div>Artemis Technologies</div>
                   <div class="text-neutral-400">{t.career.artemis.duration[lang]}</div>
-                  <div class="mt-1 text-sm" set:html={t.career.artemis.description[lang]} />
+                  <div class="mt-1 text-xs" set:html={t.career.artemis.description[lang]} />
                 </div>
               </li>
               <li>
@@ -386,7 +393,7 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
                 <div class="text-left">
                   <div>NIC.br</div>
                   <div class="text-neutral-400">{t.career.nic_br.duration[lang]}</div>
-                  <div class="mt-1 text-sm" set:html={t.career.nic_br.description[lang]} />
+                  <div class="mt-1 text-xs" set:html={t.career.nic_br.description[lang]} />
                 </div>
               </li>
             </ol>
@@ -394,7 +401,7 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
           <hr class="border-[1.5px] text-violet-700" />
           <article>
             <h2 class="text-3xl font-thin text-violet-700">{t.interests.title[lang]}</h2>
-            <div class="mt-4 text-sm" set:html={t.interests.description[lang]} />
+            <div class="mt-4 text-xs" set:html={t.interests.description[lang]} />
           </article>
         </div>
         <div class="flex flex-col gap-y-4">
@@ -413,7 +420,7 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
                 <div class="text-left">
                   <div>{t.education.poli_usp.usp[lang]}</div>
                   <div class="text-neutral-400">{t.education.poli_usp.duration[lang]}</div>
-                  <div class="mt-1 text-sm" set:html={t.education.poli_usp.description[lang]} />
+                  <div class="mt-1 text-xs" set:html={t.education.poli_usp.description[lang]} />
                 </div>
               </li>
               <li>
@@ -428,7 +435,7 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
                 <div class="text-right">
                   <div>Colégio Santa Cruz</div>
                   <div class="text-neutral-400">{t.education.santa_cruz.duration[lang]}</div>
-                  <div class="mt-1 text-sm" set:html={t.education.santa_cruz.description[lang]} />
+                  <div class="mt-1 text-xs" set:html={t.education.santa_cruz.description[lang]} />
                 </div>
               </li>
             </ol>
@@ -442,16 +449,33 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
                   width={48}
                   height={48}
                   loading="eager"
+                  src={logoNow.src}
+                  alt="now"
+                  class="float-left mr-2 rounded-md bg-white shadow-sm ring shadow-violet-300 ring-violet-300"
+                />
+                <div class="text-left">
+                  <div>now</div>
+                  <div>
+                    <a href="https://now.dev.br" class="text-violet-700 underline">https://now.dev.br</a>
+                  </div>
+                  <div class="mt-1 text-xs" set:html={t.personal_projects.now.description[lang]} />
+                </div>
+              </li>
+              <li>
+                <img
+                  width={48}
+                  height={48}
+                  loading="eager"
                   src={logoDuper.src}
                   alt="Duper"
-                  class="float-left mr-2 rounded-md bg-white shadow-sm ring shadow-violet-300 ring-violet-300"
+                  class="float-right ml-2 rounded-md bg-white shadow-sm ring shadow-violet-300 ring-violet-300"
                 />
                 <div class="text-left">
                   <div>Duper</div>
                   <div>
                     <a href="https://duper.dev.br" class="text-violet-700 underline">https://duper.dev.br</a>
                   </div>
-                  <div class="mt-1 text-sm" set:html={t.personal_projects.duper.description[lang]} />
+                  <div class="mt-1 text-xs" set:html={t.personal_projects.duper.description[lang]} />
                 </div>
               </li>
               <li>
@@ -461,14 +485,14 @@ const { lang } = Astro.props as { lang: "pt" | "en" };
                   loading="eager"
                   src={logoSandhole.src}
                   alt="Sandhole"
-                  class="float-right ml-2 rounded-md bg-white shadow-sm ring shadow-violet-300 ring-violet-300"
+                  class="float-left mr-2 rounded-md bg-white shadow-sm ring shadow-violet-300 ring-violet-300"
                 />
                 <div class="text-right">
                   <div>Sandhole</div>
                   <div>
                     <a href="https://sandhole.com.br" class="text-violet-700 underline">https://sandhole.com.br</a>
                   </div>
-                  <div class="mt-1 text-sm" set:html={t.personal_projects.sandhole.description[lang]} />
+                  <div class="mt-1 text-xs" set:html={t.personal_projects.sandhole.description[lang]} />
                 </div>
               </li>
             </ol>

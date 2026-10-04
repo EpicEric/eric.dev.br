@@ -1,6 +1,7 @@
 { runner, ... }:
 {
-  default = [ ];
+  inherit (import ./.tack) nixpkgs;
+
   jobs = {
     cv = {
       steps = [
@@ -9,9 +10,7 @@
           deriv = import ./nix/cv { };
         })
         {
-          env = {
-            CV_DIR = runner.download "cv";
-          };
+          env.CV_DIR = runner.download "cv";
           run = ''
             cp $CV_DIR/* public/
           '';
@@ -38,12 +37,10 @@
               WEBSITE = runner.download "website";
               WEBSITE_HOST = runner.secret "WEBSITE_HOST";
             };
+            path = [ pkgs.rsync ];
             run = ''
               rsync --delete-after -acP $WEBSITE/ $WEBSITE_HOST:www
             '';
-            path = [
-              pkgs.rsync
-            ];
           }
         ];
       };

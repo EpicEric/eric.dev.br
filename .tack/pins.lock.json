@@ -3,16 +3,16 @@
     "type": "github",
     "owner": "NixOS",
     "repo": "nixpkgs",
-    "rev": "f8e81fc7eb063db454f563cdd596fb96a5ad1497",
-    "narHash": "sha256-sjfvXMbG5pCFgpvw2OZAFcZiTvrppCWvnB6cuGrSY08=",
-    "lastModified": 1785542685
+    "rev": "8edc0c72e3a38faf5434e40d1f19431125fe4b30",
+    "narHash": "sha256-tqM7xDEsaeK1p6VvRygeZ9LkQRpUUkbRT02BHv6hnTM=",
+    "lastModified": 1791487292
   },
   "now": {
-    "type": "github",
-    "owner": "EpicEric",
-    "repo": "now",
-    "rev": "51a8b7d9d2d70df4370879d2c0c4c78fefdd4fe1",
-    "narHash": "sha256-xhoau2dRj+aMXEyL91Z/oYUlp37xeucFrSrZ/SU8/AU=",
-    "lastModified": 1785588576
+    "type": "git",
+    "url": "https://codeberg.org/now-runner/now.git",
+    "ref": "HEAD",
+    "rev": "0a23bb7d7cd4873be9ebca28da5d9dd90f3444e7",
+    "narHash": "sha256-zc4Lm5q7TwU7qC5aKrkZLGJXYB9RSOEJu25y3Kv3ets=",
+    "lastModified": 1791803232
   }
 }

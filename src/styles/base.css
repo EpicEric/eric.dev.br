@@ -57,4 +57,10 @@
   .reveal.active {
     @apply translate-y-0 opacity-100;
   }
+  .stamp {
+    @apply opacity-10 scale-125 -translate-y-2 ease-in transition-[opacity,scale,translate];
+  }
+  .stamp.active {
+    @apply opacity-100 scale-100 translate-y-0;
+  }
 }

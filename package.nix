@@ -18,9 +18,7 @@ buildNpmPackage {
     ];
   };
 
-  npmDeps = importNpmLock {
-    npmRoot = ./.;
-  };
+  npmDeps = importNpmLock { npmRoot = ./.; };
 
   inherit (importNpmLock) npmConfigHook;
 

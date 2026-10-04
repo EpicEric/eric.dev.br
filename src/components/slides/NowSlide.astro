@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import logoNow from "../../assets/now.png";
+
+const { slide } = Astro.props;
+---
+
+<article
+  class="grid content-center items-center justify-center"
+  id={`slide-${slide}`}
+  x-data="{ active: false }"
+  x-intersect.margin.100px.-50%.0px.-50%={`slide = ${slide}; active = true`}
+  aria-label="now"
+  style="--dot-space: 18px; --dot-size: 2px; background: linear-gradient(90deg, var(--color-gray-400) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), linear-gradient(var(--color-gray-400) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), var(--color-gray-500);"
+>
+  <h2 class="sr-only">now</h2>
+  <div
+    class="grid h-screen max-w-[90%] items-center justify-center justify-self-center border-r border-l border-r-stone-950 border-l-stone-700 bg-linear-105 from-stone-800 to-stone-900 px-10 shadow-2xl"
+  >
+    <div class="stamp relative mx-auto mb-4 flex" :class="active && 'active'">
+      <Image width={800} loading="eager" src={logoNow} alt="now logo" class="max-w-full" />
+    </div>
+    <p
+      class="stamp mr-5 max-w-md rotate-1 justify-self-center rounded-lg bg-mist-200 px-5 py-2 text-gray-950 delay-300"
+      x-text="lang === 'pt' ? 'Declare comandos em Nix e rode-os em múltiplas máquinas.' : 'Declare your commands in Nix and run them across multiple machines.'"
+      :class="active && 'active'"
+    >
+      Declare your commands in Nix and run them across multiple machines.
+    </p>
+    <div
+      class="stamp mt-3 ml-8 w-max -rotate-2 justify-self-center rounded-lg bg-mist-200 px-8 py-4 text-2xl delay-600 md:ml-32"
+      :class="active && 'active'"
+    >
+      <a
+        class="text-gray-900 underline transition-colors hover:text-sky-800 hover:decoration-wavy focus:text-sky-800 focus:decoration-wavy"
+        href="https://now.dev.br"
+        target="_blank">https://now.dev.br</a
+      >
+    </div>
+    <footer class="mt-6 text-center text-sm" :class="active && 'active'">
+      © 2026&mdash;<span x-text="lang === 'pt' ? 'hoje' : 'today'">today</span>
+    </footer>
+  </div>
+</article>
