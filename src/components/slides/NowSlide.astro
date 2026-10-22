@@ -21,18 +21,18 @@ const { slide } = Astro.props;
       <Image width={800} loading="eager" src={logoNow} alt="now logo" class="max-w-full" />
     </div>
     <p
-      class="stamp mr-5 max-w-md rotate-1 justify-self-center rounded-lg bg-mist-200 px-5 py-2 text-gray-950 delay-300"
+      class="stamp mr-5 max-w-md rotate-1 justify-self-center rounded-lg bg-gray-100 px-5 py-2 text-gray-950 delay-300"
       x-text="lang === 'pt' ? 'Declare comandos em Nix e rode-os em múltiplas máquinas.' : 'Declare your commands in Nix and run them across multiple machines.'"
       :class="active && 'active'"
     >
       Declare your commands in Nix and run them across multiple machines.
     </p>
     <div
-      class="stamp mt-3 ml-8 w-max -rotate-2 justify-self-center rounded-lg bg-mist-200 px-8 py-4 text-2xl delay-600 md:ml-32"
+      class="stamp mt-3 ml-8 w-max -rotate-2 justify-self-center rounded-lg bg-gray-100 px-8 py-4 text-2xl delay-600 md:ml-32"
       :class="active && 'active'"
     >
       <a
-        class="text-gray-900 underline transition-colors hover:text-sky-800 hover:decoration-wavy focus:text-sky-800 focus:decoration-wavy"
+        class="text-gray-950 underline transition-colors hover:text-sky-800 hover:decoration-wavy focus:text-sky-800 focus:decoration-wavy"
         href="https://now.dev.br"
         target="_blank">https://now.dev.br</a
       >
